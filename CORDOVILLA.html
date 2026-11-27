@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jhecee Ray Cordovilla — CS student, guitarist, volleyball player</title>
+  <meta name="description" content="Personal website of Jhecee Ray Cordovilla: Computer Science student at PUP Manila, lead guitarist of ZONE 2, singer-songwriter and volleyball player." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏐%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #101a3a;
+      --navy-deep: #0a1128;
+      --court: #1b2a5c;
+      --sun: #ffd23f;
+      --coral: #ff6b5b;
+      --sky: #7cc4ff;
+      --cream: #f4efe6;
+      --muted: #a9b3cf;
+      --line: rgba(244, 239, 230, 0.14);
+      --radius: 18px;
+      --display: 'Bricolage Grotesque', 'Trebuchet MS', system-ui, sans-serif;
+      --body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      font-family: var(--body);
+      line-height: 1.65;
+      color: var(--cream);
+      background:
+        radial-gradient(900px 500px at 85% -10%, rgba(255, 210, 63, 0.12), transparent 60%),
+        radial-gradient(700px 500px at -10% 30%, rgba(124, 196, 255, 0.10), transparent 60%),
+        var(--navy-deep);
+    }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 6px; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(10, 17, 40, 0.8);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-family: var(--display); font-weight: 800; font-size: 1.15rem; }
+    .logo {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--sun); color: var(--navy-deep);
+      font-size: 0.9rem; font-weight: 800;
+    }
+    nav { display: flex; gap: 6px; }
+    nav a { text-decoration: none; padding: 8px 14px; border-radius: 999px; color: var(--muted); font-weight: 500; transition: background .2s, color .2s; }
+    nav a:hover { background: var(--line); color: var(--cream); }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center; padding: 72px 0 56px; }
+    .hero h1 {
+      font-family: var(--display); font-weight: 800;
+      font-size: clamp(2.6rem, 6.4vw, 4.6rem);
+      line-height: 1.02; letter-spacing: -0.03em;
+      margin: 0 0 20px;
+    }
+    .hero h1 span { color: var(--sun); }
+    .rotator { font-family: var(--display); font-weight: 600; font-size: clamp(1.2rem, 2.6vw, 1.6rem); color: var(--sky); min-height: 2.2rem; margin: 0 0 18px; }
+    .rotator .caret { display: inline-block; width: 3px; height: 1.1em; background: var(--coral); margin-left: 4px; vertical-align: -0.15em; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .intro { max-width: 52ch; color: var(--muted); font-size: 1.08rem; margin: 0 0 28px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-block; text-decoration: none; cursor: pointer; border: 0;
+      font: 700 1rem var(--body);
+      padding: 13px 24px; border-radius: 999px;
+      background: var(--sun); color: var(--navy-deep);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 0 rgba(255, 210, 63, 0.25); }
+    .btn.ghost { background: transparent; color: var(--cream); border: 2px solid var(--line); }
+    .btn.ghost:hover { border-color: var(--cream); box-shadow: none; }
+
+    .photo { position: relative; justify-self: center; width: min(100%, 340px); }
+    .photo::before {
+      content: ""; position: absolute; inset: 0;
+      background: var(--coral); border-radius: 28px;
+      transform: rotate(5deg);
+    }
+    .photo img {
+      position: relative; display: block; width: 100%; aspect-ratio: 4 / 5;
+      object-fit: cover; object-position: top;
+      border-radius: 28px; border: 4px solid var(--cream);
+      background: var(--court);
+      transform: rotate(-2deg);
+    }
+    .photo .tag {
+      position: absolute; right: -12px; bottom: 18px; z-index: 1;
+      background: var(--sun); color: var(--navy-deep);
+      font-weight: 700; font-size: 0.9rem;
+      padding: 8px 14px; border-radius: 999px;
+      transform: rotate(4deg);
+    }
+
+    /* Sections */
+    section { padding: 56px 0; border-top: 1px solid var(--line); }
+    h2 { font-family: var(--display); font-weight: 800; font-size: clamp(1.7rem, 3.6vw, 2.3rem); letter-spacing: -0.02em; margin: 0 0 8px; }
+    .sub { color: var(--muted); margin: 0 0 32px; max-width: 56ch; }
+
+    .modes { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--navy); }
+    .mode { padding: 28px; }
+    .mode + .mode { border-left: 1px solid var(--line); }
+    .mode .emoji { font-size: 2rem; display: block; margin-bottom: 10px; }
+    .mode h3 { font-family: var(--display); margin: 0 0 6px; font-size: 1.25rem; }
+    .mode p { margin: 0; color: var(--muted); }
+    .mode.code h3 { color: var(--sky); }
+    .mode.stage h3 { color: var(--coral); }
+    .mode.court h3 { color: var(--sun); }
+
+    .skill-groups { display: grid; gap: 20px; }
+    .skill-row { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: baseline; }
+    .skill-row h3 { margin: 0; font-size: 1rem; color: var(--muted); font-weight: 500; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip { padding: 7px 16px; border-radius: 999px; border: 1.5px solid var(--line); font-weight: 500; transition: border-color .2s, transform .2s; }
+    .chip:hover { border-color: var(--sun); transform: translateY(-2px); }
+
+    .timeline { list-style: none; margin: 0; padding: 0 0 0 28px; border-left: 3px solid var(--sun); display: grid; gap: 28px; }
+    .timeline li { position: relative; }
+    .timeline li::before { content: ""; position: absolute; left: -38px; top: 7px; width: 13px; height: 13px; border-radius: 50%; background: var(--navy-deep); border: 3px solid var(--sun); }
+    .timeline h3 { margin: 0; font-family: var(--display); font-size: 1.2rem; }
+    .timeline p { margin: 2px 0 0; color: var(--muted); }
+    .timeline .now { display: inline-block; margin-left: 8px; font-size: 0.8rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: var(--coral); color: var(--navy-deep); vertical-align: middle; }
+
+    /* Contact */
+    .contact-box { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; background: var(--navy); border: 1px solid var(--line); border-radius: var(--radius); padding: 36px; }
+    .socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .socials a { text-decoration: none; padding: 9px 18px; border-radius: 999px; border: 1.5px solid var(--line); font-weight: 700; transition: background .2s, color .2s, border-color .2s; }
+    .socials a:hover { background: var(--cream); color: var(--navy-deep); border-color: var(--cream); }
+    form { display: grid; gap: 12px; }
+    label { font-weight: 500; font-size: 0.92rem; color: var(--muted); display: grid; gap: 6px; }
+    input, textarea {
+      width: 100%; font: inherit; color: var(--cream);
+      padding: 12px 14px; border-radius: 12px;
+      border: 1.5px solid var(--line); background: var(--navy-deep);
+    }
+    input:focus, textarea:focus { outline: none; border-color: var(--sun); box-shadow: 0 0 0 3px rgba(255, 210, 63, 0.25); }
+    .form-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    footer { padding: 36px 0 48px; text-align: center; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--line); }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 48px; }
+      .photo { order: -1; width: min(70%, 280px); }
+      .modes { grid-template-columns: 1fr; }
+      .mode + .mode { border-left: 0; border-top: 1px solid var(--line); }
+      .skill-row { grid-template-columns: 1fr; gap: 8px; }
+      .contact-box { grid-template-columns: 1fr; padding: 24px; }
+      nav a { padding: 8px 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .caret { animation: none !important; }
+      .btn, .chip { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Jhecee, back to top">
+        <span class="logo" aria-hidden="true">JRC</span>
+        <span>Jhecee</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <div class="hero">
+      <div>
+        <p class="rotator" aria-live="off"><span id="rotating">I write code</span><span class="caret" aria-hidden="true"></span></p>
+        <h1>Hi, I'm <span>Jhecee</span> Ray Cordovilla.</h1>
+        <p class="intro">I'm a Computer Science sophomore at PUP Manila who builds websites in HTML and C++, designs interfaces, plays lead guitar, writes songs, and spikes a volleyball when I can.</p>
+        <div class="btns">
+          <a class="btn" href="#contact">Say hello</a>
+          <a class="btn ghost" href="#skills">See what I do</a>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="jhec.jpg" alt="Portrait of Jhecee Ray Cordovilla" />
+        <span class="tag">Based in Manila</span>
+      </div>
+    </div>
+
+    <section id="about">
+      <h2>One person, three modes</h2>
+      <p class="sub">I switch between building, performing, and playing. Each one makes the others better.</p>
+      <div class="modes">
+        <div class="mode code">
+          <span class="emoji" aria-hidden="true">💻</span>
+          <h3>Code &amp; design</h3>
+          <p>Websites in HTML and CSS, programs in C++, and interfaces shaped with UI/UX in mind.</p>
+        </div>
+        <div class="mode stage">
+          <span class="emoji" aria-hidden="true">🎸</span>
+          <h3>On stage</h3>
+          <p>Lead guitarist of ZONE 2, and a singer-songwriter writing my own music.</p>
+        </div>
+        <div class="mode court">
+          <span class="emoji" aria-hidden="true">🏐</span>
+          <h3>On the court</h3>
+          <p>Volleyball player who loves teamwork, timing, and a good rally.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="sub">What I work with, from the keyboard to the fretboard.</p>
+      <div class="skill-groups">
+        <div class="skill-row">
+          <h3>Build</h3>
+          <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">C++</span></div>
+        </div>
+        <div class="skill-row">
+          <h3>Design</h3>
+          <div class="chips"><span class="chip">UI/UX Design</span></div>
+        </div>
+        <div class="skill-row">
+          <h3>Music</h3>
+          <div class="chips"><span class="chip">Lead Guitarist of ZONE 2</span><span class="chip">Singer-Songwriter</span></div>
+        </div>
+        <div class="skill-row">
+          <h3>Sports</h3>
+          <div class="chips"><span class="chip">Volleyball</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <p class="sub">Where I've been learning.</p>
+      <ol class="timeline">
+        <li>
+          <h3>B.S. in Computer Science <span class="now">Now</span></h3>
+          <p>Polytechnic University of the Philippines, Manila</p>
+        </li>
+        <li>
+          <h3>Science, Technology, Engineering, and Mathematics (STEM)</h3>
+          <p>San Juan City Academic Senior High School</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <h2>Let's talk</h2>
+          <p class="sub">Have a project, a gig, or a game in mind? Send a message and I'll get back to you.</p>
+          <div class="socials" aria-label="Social links">
+            <a href="https://www.facebook.com/jek.ryce" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/jek_ryce" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+        <!-- Replace your.email@example.com with your real email, or connect a form service. -->
+        <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+          <label>Your name <input type="text" name="name" autocomplete="name" required /></label>
+          <label>Your email <input type="email" name="email" autocomplete="email" required /></label>
+          <label>Your message <textarea name="message" rows="5" required></textarea></label>
+          <div class="form-actions">
+            <button class="btn" type="submit">Send message</button>
+            <button class="btn ghost" type="reset">Clear</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year">2026</span> Jhecee Ray Cordovilla. Built with love ♥</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // One playful moment: the hero line cycles through what I do.
+    (function () {
+      var el = document.getElementById('rotating');
+      var lines = ['I write code', 'I write songs', 'I play the guitar', 'I play volleyball'];
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var line = 0, ch = lines[0].length, deleting = true;
+      function tick() {
+        var text = lines[line];
+        if (deleting) {
+          ch--;
+          if (ch <= 0) { deleting = false; line = (line + 1) % lines.length; ch = 0; }
+        } else {
+          ch++;
+          if (ch >= lines[line].length) { deleting = true; el.textContent = lines[line]; return setTimeout(tick, 1800); }
+        }
+        el.textContent = lines[line].slice(0, ch);
+        setTimeout(tick, deleting ? 35 : 70);
+      }
+      setTimeout(tick, 1800);
+    })();
+  </script>
+</body>
+</html>

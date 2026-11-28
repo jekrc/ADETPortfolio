@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 10%;
+    background-color: white;
+}
+
+header h2 {
+    color: #333;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 25px;
+}
+
+nav a:hover {
+    color: #5271ff;
+}
+
+main {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 50px 10%;
+}
+
+.profile img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid white;
+}
+
+.intro {
+    max-width: 550px;
+}
+
+.greeting {
+    color: #5271ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.intro h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.intro h1 span {
+    color: #5271ff;
+}
+
+.intro h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.description {
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.primary {
+    background-color: #5271ff;
+    color: white;
+}
+
+.secondary {
+    border: 2px solid #5271ff;
+    color: #5271ff;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    main {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .profile img {
+        width: 210px;
+        height: 210px;
+    }
+
+    .intro h1 {
+        font-size: 30px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
